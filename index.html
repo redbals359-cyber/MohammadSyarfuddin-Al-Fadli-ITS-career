@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtomNomi — Eksperimen Keuangan Ato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">ATOMNOMI</span>
+      <h1>Eksperimen Keuangan Ato 🌱</h1>
+      <p>Susun atom kecil hari ini, tumbuhkan pohon keuanganmu besok.</p>
+    </div>
+    <button id="helpBtn" class="secondary-btn">💡 Tanya Ato</button>
+  </header>
+
+  <main class="container">
+    <section class="card projection-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">01 · PROYEKSI</span>
+          <h2>Pohon Keuangan 12 Bulan</h2>
+        </div>
+        <div id="healthPill" class="health-pill">⚖️ Seimbang</div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="growthChart" aria-label="Grafik proyeksi pertumbuhan 12 bulan"></canvas>
+      </div>
+      <div class="chart-stats">
+        <div><span>Tabungan awal</span><strong id="startingSaving">Rp0</strong></div>
+        <div><span>Proyeksi bulan 12</span><strong id="projectedSaving">Rp0</strong></div>
+        <div><span>Skor kebiasaan</span><strong id="habitScore">0/100</strong></div>
+      </div>
+      <p class="tiny-note">*Proyeksi ini hanya permainan edukasi. Angka pertumbuhan bukan janji hasil investasi.</p>
+    </section>
+
+    <section class="game-grid">
+      <aside class="card ato-card">
+        <div class="ato-avatar" aria-hidden="true">🌱</div>
+        <span class="section-kicker">MASKOT</span>
+        <h2>Ato si Biji Benih Ajaib</h2>
+        <p id="atoMessage">Halo! Yuk susun atom keuanganmu. Sedikit demi sedikit bisa menjadi kebiasaan besar.</p>
+        <button id="randomTipBtn" class="secondary-btn full">✨ Tips Ato</button>
+      </aside>
+
+      <section class="card arena-card">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">02 · ARENA</span>
+            <h2>Racik Molekul Keuangan</h2>
+          </div>
+          <button id="resetBtn" class="text-btn">Reset</button>
+        </div>
+
+        <div class="atoms" id="atoms">
+          <div class="atom atom-need" draggable="true" data-type="need" tabindex="0">
+            <span class="atom-icon">🥗</span>
+            <div><strong>Kebutuhan</strong><small>Hal yang memang diperlukan</small></div>
+            <b class="atom-symbol">🟢</b>
+          </div>
+          <div class="atom atom-save" draggable="true" data-type="saving" tabindex="0">
+            <span class="atom-icon">🪙</span>
+            <div><strong>Tabungan</strong><small>Disimpan untuk tujuan nanti</small></div>
+            <b class="atom-symbol">🔴</b>
+          </div>
+          <div class="atom atom-want" draggable="true" data-type="want" tabindex="0">
+            <span class="atom-icon">🧸</span>
+            <div><strong>Keinginan</strong><small>Seru, tetapi tidak selalu perlu</small></div>
+            <b class="atom-symbol">🔵</b>
+          </div>
+        </div>
+
+        <div class="blueprint">
+          <div class="drop-header">
+            <div>
+              <span class="section-kicker">ARENA CETAK BIRU</span>
+              <h3>Taruh atom di sini</h3>
+            </div>
+            <span id="atomCount">0 atom</span>
+          </div>
+          <div class="dropzones">
+            <div class="dropzone need-zone" data-type="need">
+              <span>🥗</span><strong>Kebutuhan</strong><b id="needCount">0</b>
+              <small>makan, sekolah, kesehatan</small>
+            </div>
+            <div class="dropzone save-zone" data-type="saving">
+              <span>🪙</span><strong>Tabungan</strong><b id="savingCount">0</b>
+              <small>untuk tujuan masa depan</small>
+            </div>
+            <div class="dropzone want-zone" data-type="want">
+              <span>🧸</span><strong>Keinginan</strong><b id="wantCount">0</b>
+              <small>boleh, asal tidak berlebihan</small>
+            </div>
+          </div>
+          <div id="molecule" class="molecule" aria-live="polite">
+            <div class="empty-molecule">Belum ada atom. Pilih atau tarik atom ke arena.</div>
+          </div>
+          <button id="checkBtn" class="primary-btn">🧪 Racik &amp; Cek</button>
+          <div id="feedback" class="feedback" role="status"></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="card badges-card">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">03 · PRESTASI</span>
+          <h2>📖 Buku Prestasi Ato</h2>
+        </div>
+        <span id="badgeProgress">0/5 terbuka</span>
+      </div>
+      <div id="badgeGallery" class="badge-gallery"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="modal-close" aria-label="Tutup">×</button>
+      <div class="modal-ato">🌱</div>
+      <span class="section-kicker">TANYA ATO</span>
+      <h2 id="modalTitle">Apa itu atom keuangan?</h2>
+      <div class="lesson">
+        <p><strong>Atom sains</strong> adalah bagian kecil penyusun sesuatu. Di AtomNomi, kita memakai ide itu sebagai perumpamaan: keputusan uang juga bisa dimulai dari langkah kecil.</p>
+        <div class="lego-box">🧱 + 🧱 + 🧱 = 🏗️<br><small>Balok LEGO kecil bisa menjadi bangunan besar.</small></div>
+        <p><strong>Atom ekonomi</strong> kita terdiri dari Kebutuhan, Tabungan, dan Keinginan. Kalau disusun dengan seimbang, kebiasaan kecilmu dapat membantu membangun tujuan keuangan.</p>
+        <div class="seed-box">🌱 → 🌿 → 🌳<br><small>Biji kecil + dirawat konsisten = tumbuh.</small></div>
+        <p class="tiny-note">Ato mengajarkan kebiasaan mengelola uang, bukan mengajak anak melakukan investasi atau mengambil risiko keuangan.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
