@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082f6b">
+<meta name="description" content="My Journey at ITS — perjalanan, pengalaman, dan pembelajaran Mohammad Syarifuddin Al-Fadli.">
+
+<title>My Journey at ITS</title>
+
+<style>
+:root {
+    --navy: #082f6b;
+    --blue: #0756a6;
+    --light-blue: #eaf3ff;
+    --gold: #d6ad55;
+    --text: #18283d;
+    --muted: #64748b;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+button, input {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 47, 107, 0.97);
+    backdrop-filter: blur(12px);
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.nav-link {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #061c43, #084a91 70%, #1267ad);
+    color: white;
+    padding: 70px 20px 60px;
+    text-align: center;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero::before {
+    width: 400px;
+    height: 400px;
+    top: -240px;
+    left: -120px;
+}
+
+.hero::after {
+    width: 350px;
+    height: 350px;
+    bottom: -250px;
+    right: -80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 64px);
+    line-height: 1.12;
+    margin-bottom: 15px;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: #d8e7fa;
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+/* PROFILE */
+.profile-section {
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    margin: -28px auto 0;
+    padding: 0 20px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 12px 45px rgba(20, 48, 87, 0.09);
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-left {
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid #e6effb;
+    outline: 2px solid var(--gold);
+    display: block;
+    margin: 0 auto 20px;
+    background: var(--light-blue);
+}
+
+.its-logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 5px;
+}
+
+.its-caption {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.profile-info h2 {
+    font-size: 27px;
+    line-height: 1.3;
+    color: var(--navy);
+    margin-bottom: 6px;
+}
+
+.username {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.profile-caption {
+    display: grid;
+    gap: 9px;
+    margin-bottom: 23px;
+}
+
+.profile-caption p {
+    font-size: 14px;
+    color: #42536a;
+}
+
+.profile-caption strong {
+    color: var(--navy);
+}
+
+.linkedin-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    background: #0a66c2;
+    color: white;
+    padding: 11px 21px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.linkedin-button:hover {
+    background: #084b91;
+    transform: translateY(-2px);
+}
+
+.linkedin-icon {
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* MUSIC PLAYER */
+.music-card {
+    max-width: 920px;
+    margin: 28px auto 0;
+    padding: 0 20px;
+}
+
+.music-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 25px;
+    background: white;
+    border: 1px solid #e5ebf4;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(20,48,87,0.04);
+}
+
+.music-cover {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--navy), #2478c8);
+    color: white;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.music-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.music-label {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.music-title {
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 14px;
+    margin: 1px 0 8px;
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.play-button {
+    border: none;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+}
+
+.play-button:hover {
+    background: var(--blue);
+}
+
+.time {
+    color: var(--muted);
+    font-size: 10px;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.progress {
+    flex: 1;
+    min-width: 30px;
+    height: 5px;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.volume {
+    width: 75px;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.music-status {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* SECTION HEADING */
+.journey {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading .small-title {
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: clamp(27px, 4vw, 40px);
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(var(--gold), #b9d2f1, var(--blue));
+}
+
+.story {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 45px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 15px;
+    top: 25px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 5px solid #d8e9fc;
+    box-shadow: 0 0 0 4px #f5f7fb;
+    z-index: 1;
+}
+
+.story-card {
+    overflow: hidden;
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 17px;
+    box-shadow: 0 6px 25px rgba(25, 48, 80, 0.045);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(25, 48, 80, 0.09);
+}
+
+.story-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+    background: #e5edf7;
+}
+
+.story-content {
+    padding: 27px 30px 30px;
+}
+
+.story-number {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.story-content h3 {
+    color: var(--navy);
+    font-size: clamp(21px, 3vw, 27px);
+    line-height: 1.4;
+    margin: 8px 0 18px;
+}
+
+.story-content p {
+    font-size: 14px;
+    color: #45556b;
+    line-height: 1.95;
+    margin-bottom: 13px;
+    white-space: pre-line;
+}
+
+.story-author {
+    font-size: 12px;
+    color: var(--blue);
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.story-divider {
+    height: 1px;
+    background: #edf1f7;
+    margin: 20px 0;
+}
+
+.quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 15px;
+    color: var(--navy);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* CLOSING */
+.closing {
+    background: linear-gradient(135deg, #061c43, #0a4b91);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.closing .closing-label {
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.closing h2 {
+    font-size: clamp(25px, 4vw, 38px);
+    margin: 12px 0;
+}
+
+.closing p {
+    color: #d8e7fa;
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.closing-line {
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+footer {
+    background: #04142e;
+    color: #9eb1cc;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 11px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+    nav {
+        padding: 13px 5%;
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 55px 20px 55px;
+    }
+
+    .profile-card {
+        grid-template-columns: 1fr;
+        padding: 27px 22px;
+        gap: 20px;
+    }
+
+    .profile-picture {
+        width: 135px;
+        height: 135px;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        font-size: 23px;
+    }
+
+    .profile-caption {
+        text-align: left;
+        display: inline-grid;
+    }
+
+    .music-inner {
+        padding: 18px 14px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .music-cover {
+        width: 43px;
+        height: 43px;
+        font-size: 20px;
+    }
+
+    .volume-control {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .volume {
+        width: 100px;
+    }
+
+    .journey {
+        margin: 60px auto;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .story {
+        padding-left: 43px;
+        margin-bottom: 30px;
+    }
+
+    .timeline::before {
+        left: 12px;
+    }
+
+    .timeline-dot {
+        left: 2px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .story-content {
+        padding: 21px 18px 24px;
+    }
+
+    .story-content p {
+        font-size: 13px;
+    }
+
+    .story-image {
+        max-height: 330px;
+        object-fit: contain;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#" class="brand" style="color:white">
+        MY JOURNEY <span>AT ITS</span>
+    </a>
+    <a href="#journey" class="nav-link">MY EXPERIENCES ↘</a>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">PERSONAL JOURNEY & GROWTH</div>
+        <h1>My Journey<br><span>at ITS.</span></h1>
+        <p class="hero-description">
+            Sebuah perjalanan tentang keberanian untuk mencoba,
+            bertumbuh melalui pengalaman, dan berbagi manfaat
+            bersama orang-orang hebat.
+        </p>
+    </div>
+</header>
+
+<section class="profile-section">
+    <div class="profile-card">
+
+        <div class="profile-left">
+            <img
+                class="profile-picture"
+                src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/MohammadSyarfuddinAlFadli.jpg"
+                alt="Foto profil Mohammad Syarifuddin Al-Fadli"
+                onerror="this.alt='Foto profil tidak dapat dimuat';"
+            >
+
+            <!-- Logo ITS resmi -->
+            <img
+                class="its-logo"
+                src="https://www.its.ac.id/wp-content/uploads/2022/03/logo-its.png"
+                alt="Logo Institut Teknologi Sepuluh Nopember"
+                onerror="this.onerror=null;this.src='https://www.its.ac.id/wp-content/uploads/2022/03/Logo-ITS-1.png';"
+            >
+
+            <div class="its-caption">INSTITUT TEKNOLOGI SEPULUH NOPEMBER</div>
+        </div>
+
+        <div class="profile-info">
+            <h2>Mohammad Syarifuddin Al-Fadli</h2>
+            <div class="username">@alfadlisyarifuddin</div>
+
+            <div class="profile-caption">
+                <p><strong>Part of</strong> pemandu.ftspkits</p>
+                <p><strong>Awardee</strong> @baktichampions.its</p>
+                <p><strong>Vice Chairman</strong> @bsosolidd</p>
+                <p><strong>Manager</strong> @cescnihbang</p>
+                <p><strong>20+</strong> Speaker &amp; Mentor</p>
+                <p><strong>Bridge Enthusiast</strong></p>
+            </div>
+
+            <a
+                class="linkedin-button"
+                href="https://linkedin.com/in/mohammadsyarifuddinalfadli"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="linkedin-icon">in</span>
+                LinkedIn
+                <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- MUSIC PLAYER -->
+<section class="music-card" aria-label="Pemutar Hymne ITS">
+    <div class="music-inner">
+
+        <div class="music-cover" aria-hidden="true">♫</div>
+
+        <div class="music-content">
+            <div class="music-label">MUSIC PLAYER</div>
+            <div class="music-title">Hymne ITS 2026</div>
+
+            <div class="music-controls">
+                <button
+                    id="playButton"
+                    class="play-button"
+                    type="button"
+                    aria-label="Putar musik"
+                    title="Putar atau jeda"
+                >▶</button>
+
+                <span id="currentTime" class="time">0:00</span>
+
+                <input
+                    id="progress"
+                    class="progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="Posisi musik"
+                >
+
+                <span id="duration" class="time">0:00</span>
+            </div>
+
+            <div id="musicStatus" class="music-status" aria-live="polite">
+                Tekan tombol Play untuk mendengarkan Hymne ITS.
+            </div>
+        </div>
+
+        <div class="volume-control">
+            <span aria-hidden="true">🔊</span>
+            <input
+                id="volume"
+                class="volume"
+                type="range"
+                min="0"
+                max="1"
+                value="0.7"
+                step="0.01"
+                aria-label="Volume musik"
+            >
+        </div>
+
+    </div>
+
+    <audio id="hymne" preload="metadata">
+        <source
+            src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/Hymne%20ITS%202026.mp3"
+            type="audio/mpeg"
+        >
+        Browser kamu tidak mendukung pemutar audio.
+    </audio>
+</section>
+
+<main class="journey" id="journey">
+
+    <div class="section-heading">
+        <div class="small-title">The Story So Far</div>
+        <h2>My Journey &amp; Experiences</h2>
+        <p>Empat perjalanan, banyak pembelajaran, dan mimpi yang terus bertumbuh.</p>
+    </div>
+
+    <div class="timeline">
+
+        <!-- STORY 1 -->
+        <article class="story">
+            <div class="timeline-dot"></div>
+
+            <div class="story-card">
+                <img
+                    class="story-image"
+                    src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/Penalaran%20dan%20PKTI.jpg"
+                    alt="Pengalaman Aku, Penalaran dan PKTI-TD"
+                    loading="lazy"
+                >
+
+                <div class="story-content">
+                    <div class="story-number">Journey 01</div>
+
+                    <h3>Aku, Penalaran dan PKTI-TD</h3>
+
+                    <div class="story-author">@alfadlisyarifuddin</div>
+
+                    <p>Tanggung jawab yang diberikan dalam memberikan materi tergantikan dengan pengalaman yang didapat. Terima kasih HMS dan HMDTEO serta Unit trainer keilmiahan ITS telah memberikan kesempatan ini dan yang paling spesial yaitu UKM Penalaran.</p>
+
+                    <p>Di sini dengan jaket UKM Penalaran yang menjadi kebanggaan dalam berkembang, aku siap menyebarkan semangat dalam berkembang di keilmiahan.</p>
+
+                    <div class="story-divider"></div>
+
+                    <div class="quote">
+                        Bertumbuh bukan hanya tentang apa yang kita pelajari,
+                        tetapi juga tentang apa yang bisa kita bagikan.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- STORY 2 -->
+        <article class="story">
+            <div class="timeline-dot"></div>
+
+            <div class="story-card">
+                <img
+                    class="story-image"
+                    src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/Esai4.jpg"
+                    alt="Pengalaman Aku, Esai 4 dan Scientific Club"
+                    loading="lazy"
+                >
+
+                <div class="story-content">
+                    <div class="story-number">Journey 02</div>
+
+                    <h3>Aku, Esai 4 dan Scientific Club</h3>
+
+                    <div class="story-author">@alfadlisyarifuddin</div>
+
+                    <p>Perjalanan singkat sebagai mentor atau kurator dimensi di Scientific Club membawa banyak hal baru dan pelajaran baru. Ditempa di SC 2024 dan mencoba untuk menempa di SC 2025, sehingga banyak wawasan dan pengalaman yang didapat.</p>
+
+                    <p>Seperti orang di tengah gurun yang menemukan telaga, haus akan diskusi dan bertukar pikiran dengan ide-ide brilian jenius dari anggota-anggota ini.</p>
+
+                    <div class="story-divider"></div>
+
+                    <div class="quote">
+                        Diskusi membuka perspektif, sedangkan rasa ingin tahu
+                        menjaga kita untuk terus belajar.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- STORY 3 -->
+        <article class="story">
+            <div class="timeline-dot"></div>
+
+            <div class="story-card">
+                <img
+                    class="story-image"
+                    src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/Cesc%20dan%20civil.jpg"
+                    alt="Perjalanan CESC dan Civil Expo ITS 2025"
+                    loading="lazy"
+                >
+
+                <div class="story-content">
+                    <div class="story-number">Journey 03</div>
+
+                    <h3>Perjalanan Aku, CESC dan Civil Expo ITS 2025</h3>
+
+                    <div class="story-author">@alfadlisyarifuddin</div>
+
+                    <p>Perjalanan dari Mei hingga November terbayarkan dengan pengalaman-pengalaman yang indah serta diiringi keluarga CESC yang haus akan kebersamaan.</p>
+
+                    <p>Semua memiliki perannya masing-masing, semua memiliki keunggulan masing-masing, tetapi semua berani untuk mencoba.</p>
+
+                    <p>Berdiskusi dari konsepan dan inovasi hingga implementasinya, berdiskusi mengenai soal Matematika, Fisika, TPA, hingga ketekniksipilan untuk persiapan penyisihan. Ditambah pada semifinal dengan pembagiannya masing-masing, yaitu struktur, hidro, transport, Mankon, dan geotek, sehingga tercapailah yang diinginkan, yaitu dapat mempelajari soal-soal ketekniksipilan dan pembuatannya.</p>
+
+                    <p>Tepatnya final menjadi ajang bertukar pikiran dan berdiskusi mengenai lima soal ketekniksipilan dari kita, staf ke stafli hingga ke dosen.</p>
+
+                    <p>Dari Roadshow, Technical Meeting hingga perlombaan, semua berjalan mulus dengan sumbangsih pemikiran dan waktu seluruh elemen CESC dan CIVEX.</p>
+
+                    <p>Walaupun CIVEX telah berakhir, tidak ada yang dinamakan rapat terakhir, ketemuan terakhir, karena kita dari satu elemen besar, yaitu mahasiswa Teknik Sipil ITS.</p>
+
+                    <p>Terima kasih CIVEX ITS 2025, terima kasih Compe, dan terima kasih CESC.</p>
+
+                    <div class="story-divider"></div>
+
+                    <div class="quote">
+                        Sebuah tim menjadi kuat bukan karena semua orang
+                        sama, melainkan karena setiap orang berani berkontribusi.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- STORY 4 -->
+        <article class="story">
+            <div class="timeline-dot"></div>
+
+            <div class="story-card">
+                <img
+                    class="story-image"
+                    src="https://raw.githubusercontent.com/mochmushollin-code/MohammadSyarfuddin-Al-Fadli-ITS-career/main/Bso%20pandawa%2C%20nalar.jpg"
+                    alt="Nalar Project dan BSO Pandawa"
+                    loading="lazy"
+                >
+
+                <div class="story-content">
+                    <div class="story-number">Journey 04</div>
+
+                    <h3>Cerita Aku, Nalar Project dan BSO Pandawa</h3>
+
+                    <div class="story-author">@alfadlisyarifuddin</div>
+
+                    <p>Penuh keceriaan, penuh senyuman dari SD Yapita. Sebuah bentuk kecil tetapi sungguh berdampak, TDPT tepatnya di pengabdian menjadi terealisasi di semester 3 ini walaupun hanya sebagai Koor Operasional.</p>
+
+                    <p>Keringat, lelah, dan tenaga yang dituangkan menjadi hilang karena senyuman dari anak SD Yapita.</p>
+
+                    <p>Benar yang dikatakan Pak Ketum, Mas Liban, sebagai mentor esai, dan Bapak BSO, Mas Oman, bahwa BSO Pandawa adalah salah satu kamar yang penuh dengan mimpi-mimpi indah di Penalaran.</p>
+
+                    <p>Masih banyak mimpi yang bisa diukir.</p>
+
+                    <p><strong>Mengudara BSO Pandawa.</strong></p>
+
+                    <div class="story-divider"></div>
+
+                    <div class="quote">
+                        Perubahan besar dapat dimulai dari kontribusi kecil
+                        yang dilakukan bersama dengan sepenuh hati.
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<section class="closing">
+    <div class="closing-label">Beyond the Journey</div>
+    <h2>Perjalanan Belum Berakhir.</h2>
+    <div class="closing-line"></div>
+    <p>
+        Setiap pengalaman adalah ruang untuk belajar.
+        Setiap pertemuan adalah kesempatan untuk bertumbuh.
+        Dan setiap mimpi selalu punya ruang untuk diperjuangkan.
+    </p>
+</section>
+
+<footer>
+    <p>MY JOURNEY AT <span>ITS</span></p>
+    <p style="margin-top:5px">Mohammad Syarifuddin Al-Fadli · Personal Career Journey</p>
+</footer>
+
+<script>
+const audio = document.getElementById("hymne");
+const playButton = document.getElementById("playButton");
+const progress = document.getElementById("progress");
+const volume = document.getElementById("volume");
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+const musicStatus = document.getElementById("musicStatus");
+
+audio.volume = Number(volume.value);
+
+function formatTime(seconds) {
+    if (!Number.isFinite(seconds) || seconds < 0) {
+        return "0:00";
+    }
+
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return mins + ":" + String(secs).padStart(2, "0");
+}
+
+playButton.addEventListener("click", async () => {
+    if (audio.paused) {
+        musicStatus.textContent = "Memuatkan Hymne ITS...";
+
+        try {
+            await audio.play();
+        } catch (error) {
+            musicStatus.textContent =
+                "Musik gagal diputar. Periksa koneksi internet atau link audio.";
+        }
+    } else {
+        audio.pause();
+    }
+});
+
+audio.addEventListener("play", () => {
+    playButton.textContent = "Ⅱ";
+    playButton.setAttribute("aria-label", "Jeda musik");
+    musicStatus.textContent = "Hymne ITS sedang diputar.";
+});
+
+audio.addEventListener("pause", () => {
+    playButton.textContent = "▶";
+    playButton.setAttribute("aria-label", "Putar musik");
+
+    if (!audio.ended && audio.currentTime > 0) {
+        musicStatus.textContent = "Musik dijeda.";
+    }
+});
+
+audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+    currentTime.textContent = formatTime(audio.currentTime);
+
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        progress.value = (audio.currentTime / audio.duration) * 100;
+    }
+});
+
+progress.addEventListener("input", () => {
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        audio.currentTime = (Number(progress.value) / 100) * audio.duration;
+    }
+});
+
+volume.addEventListener("input", () => {
+    audio.volume = Number(volume.value);
+});
+
+audio.addEventListener("ended", () => {
+    playButton.textContent = "▶";
+    playButton.setAttribute("aria-label", "Putar musik");
+    progress.value = 0;
+    currentTime.textContent = "0:00";
+    musicStatus.textContent = "Hymne ITS selesai diputar.";
+});
+
+audio.addEventListener("error", () => {
+    musicStatus.textContent =
+        "Audio tidak dapat dimuat. Periksa alamat file MP3 di GitHub.";
+});
+</script>
+
+</body>
+</html>
